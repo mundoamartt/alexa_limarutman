@@ -33,6 +33,25 @@ function lerCorpoBruto(req) {
 }
 
 const handler = async (req, res) => {
+  // Health check (GET): mostra quais variáveis de ambiente estão PRESENTES
+  // (sem expor os valores). Útil para diagnosticar deploy no Vercel.
+  // A Alexa nunca usa GET, então isto não interfere no funcionamento.
+  if (req.method === 'GET') {
+    res.setHeader('Content-Type', 'application/json');
+    res.status(200).send(
+      JSON.stringify({
+        ok: true,
+        servico: 'alexa-assistente',
+        env: {
+          ANTHROPIC_API_KEY: Boolean(process.env.ANTHROPIC_API_KEY),
+          SUPABASE_URL: Boolean(process.env.SUPABASE_URL),
+          SUPABASE_KEY: Boolean(process.env.SUPABASE_KEY)
+        }
+      })
+    );
+    return;
+  }
+
   // A Alexa sempre chama via POST.
   if (req.method !== 'POST') {
     res.status(405).send('Method Not Allowed');

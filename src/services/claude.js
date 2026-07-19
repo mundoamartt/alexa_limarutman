@@ -4,9 +4,18 @@
 const Anthropic = require('@anthropic-ai/sdk');
 const { supabase } = require('../lib/supabase');
 
-const anthropic = new Anthropic({
-  apiKey: process.env.ANTHROPIC_API_KEY
-});
+// Cliente Anthropic instanciado sob demanda (lazy) — assim o módulo não
+// quebra no import se ANTHROPIC_API_KEY estiver ausente no ambiente.
+let _anthropic = null;
+function anthropic() {
+  if (!_anthropic) {
+    if (!process.env.ANTHROPIC_API_KEY) {
+      throw new Error('ANTHROPIC_API_KEY ausente no ambiente');
+    }
+    _anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+  }
+  return _anthropic;
+}
 
 // Modelo e limites otimizados para VOZ:
 // - respostas curtas (max_tokens baixo) porque é fala, não texto
@@ -66,7 +75,7 @@ async function conversar(deviceId, perguntaUsuario) {
     { role: 'user', content: perguntaUsuario }
   ];
 
-  const resposta = await anthropic.messages.create({
+  const resposta = await anthropic().messages.create({
     model: MODEL,
     max_tokens: MAX_TOKENS,
     system: SYSTEM_PROMPT,
