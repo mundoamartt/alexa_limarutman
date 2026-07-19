@@ -49,7 +49,7 @@ const FeederIntentHandler = {
     );
   },
   async handle(handlerInput) {
-    const acao = valorCanonico(handlerInput, 'acao') || 'ligar';
+    const acao = valorCanonico(handlerInput, 'acaoFeeder') || 'ligar';
 
     // Segura a conversa: a chamada à Tuya pode demorar.
     await falarSegurando(handlerInput, 'Só um instante...');

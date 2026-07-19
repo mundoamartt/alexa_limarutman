@@ -39,7 +39,7 @@ const SpotifyIntentHandler = {
     );
   },
   async handle(handlerInput) {
-    const acao = valorCanonico(handlerInput, 'acao');
+    const acao = valorCanonico(handlerInput, 'acaoSpotify');
     const musica = Alexa.getSlotValue(handlerInput.requestEnvelope, 'musica');
 
     await falarSegurando(handlerInput, 'Um segundo...');

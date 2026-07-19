@@ -11,7 +11,11 @@ const Alexa = require('ask-sdk-core');
 
 const { LaunchRequestHandler } = require('./handlers/launchRequest');
 const { ConversationIntentHandler } = require('./handlers/conversationIntent');
-const { ListIntentHandler } = require('./handlers/listIntent');
+const {
+  AddListItemHandler,
+  CompleteListItemHandler,
+  ReadListHandler
+} = require('./handlers/listIntent');
 const { FeederIntentHandler } = require('./handlers/feederIntent');
 const { RadioIntentHandler } = require('./handlers/radioIntent');
 const { SpotifyIntentHandler } = require('./handlers/spotifyIntent');
@@ -28,7 +32,9 @@ const skill = Alexa.SkillBuilders.custom()
   .addRequestHandlers(
     LaunchRequestHandler,
     ConversationIntentHandler,
-    ListIntentHandler,
+    AddListItemHandler,
+    CompleteListItemHandler,
+    ReadListHandler,
     FeederIntentHandler,
     RadioIntentHandler,
     SpotifyIntentHandler,

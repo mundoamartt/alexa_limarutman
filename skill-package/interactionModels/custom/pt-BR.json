@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "minha assistente",
+      "invocationName": "lima rutman",
       "intents": [
         {
           "name": "ConversationIntent",
@@ -30,12 +30,8 @@
           ]
         },
         {
-          "name": "ListIntent",
+          "name": "AddListItemIntent",
           "slots": [
-            {
-              "name": "acao",
-              "type": "LIST_ACTION"
-            },
             {
               "name": "item",
               "type": "AMAZON.SearchQuery"
@@ -46,22 +42,43 @@
             "coloca {item} na lista",
             "inclui {item} na lista",
             "adiciona {item} na minha lista",
-            "o que tem na minha lista",
-            "lê minha lista",
-            "mostra minha lista",
-            "quais são os itens da lista",
+            "bota {item} na lista",
+            "anota {item} na lista"
+          ]
+        },
+        {
+          "name": "CompleteListItemIntent",
+          "slots": [
+            {
+              "name": "item",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
             "marca {item} como feito",
             "risca {item} da lista",
             "remove {item} da lista",
-            "{acao} {item} da lista",
-            "{acao} minha lista"
+            "tira {item} da lista",
+            "já comprei {item}",
+            "conclui {item}"
+          ]
+        },
+        {
+          "name": "ReadListIntent",
+          "samples": [
+            "o que tem na minha lista",
+            "o que tem na lista",
+            "lê minha lista",
+            "mostra minha lista",
+            "quais são os itens da lista",
+            "minha lista"
           ]
         },
         {
           "name": "FeederIntent",
           "slots": [
             {
-              "name": "acao",
+              "name": "acaoFeeder",
               "type": "FEEDER_ACTION"
             }
           ],
@@ -73,7 +90,7 @@
             "como está o alimentador",
             "qual o status do alimentador",
             "quanto de ração tem",
-            "{acao} o alimentador"
+            "{acaoFeeder} o alimentador"
           ]
         },
         {
@@ -98,7 +115,7 @@
           "name": "SpotifyIntent",
           "slots": [
             {
-              "name": "acao",
+              "name": "acaoSpotify",
               "type": "SPOTIFY_ACTION"
             },
             {
@@ -115,7 +132,7 @@
             "continua o spotify",
             "toca {musica} no spotify",
             "coloca {musica} no spotify",
-            "{acao} o spotify"
+            "{acaoSpotify} o spotify"
           ]
         },
         {
@@ -140,29 +157,6 @@
         }
       ],
       "types": [
-        {
-          "name": "LIST_ACTION",
-          "values": [
-            {
-              "name": {
-                "value": "adicionar",
-                "synonyms": ["adiciona", "coloca", "inclui", "bota"]
-              }
-            },
-            {
-              "name": {
-                "value": "listar",
-                "synonyms": ["lista", "mostra", "lê", "ler", "ver", "fala"]
-              }
-            },
-            {
-              "name": {
-                "value": "concluir",
-                "synonyms": ["marca", "risca", "remove", "feito", "completar", "tirar"]
-              }
-            }
-          ]
-        },
         {
           "name": "FEEDER_ACTION",
           "values": [
