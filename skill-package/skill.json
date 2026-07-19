@@ -1,0 +1,36 @@
+{
+  "manifest": {
+    "publishingInformation": {
+      "locales": {
+        "pt-BR": {
+          "name": "Minha Assistente",
+          "summary": "Assistente inteligente com Claude, controle de dispositivos e rádios.",
+          "description": "Sua assistente doméstica inteligente, powered by Claude da Anthropic. Faça perguntas, gerencie listas, controle o alimentador dos gatos e toque rádios customizadas.",
+          "examplePhrases": [
+            "Alexa, abre minha assistente",
+            "Alexa, pede pra minha assistente me falar sobre o clima",
+            "Alexa, pede pra minha assistente ligar o alimentador"
+          ]
+        }
+      },
+      "isAvailableWorldwide": false,
+      "distributionCountries": ["BR"],
+      "category": "PRODUCTIVITY_AND_UTILITIES"
+    },
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "https://SEU-PROJETO.vercel.app/api/alexa",
+          "sslCertificateType": "Trusted"
+        },
+        "interfaces": [
+          {
+            "type": "AUDIO_PLAYER"
+          }
+        ]
+      }
+    },
+    "manifestVersion": "1.0",
+    "permissions": []
+  }
+}

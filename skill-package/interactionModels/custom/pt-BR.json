@@ -1,0 +1,292 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "minha assistente",
+      "intents": [
+        {
+          "name": "ConversationIntent",
+          "slots": [
+            {
+              "name": "query",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "me diz {query}",
+            "me fala {query}",
+            "me conta {query}",
+            "pergunta {query}",
+            "quero saber {query}",
+            "quero saber sobre {query}",
+            "o que é {query}",
+            "qual é {query}",
+            "como funciona {query}",
+            "explica {query}",
+            "como está {query}",
+            "me ajuda com {query}",
+            "preciso saber {query}",
+            "tem como {query}",
+            "o que você sabe sobre {query}"
+          ]
+        },
+        {
+          "name": "ListIntent",
+          "slots": [
+            {
+              "name": "acao",
+              "type": "LIST_ACTION"
+            },
+            {
+              "name": "item",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "adiciona {item} na lista",
+            "coloca {item} na lista",
+            "inclui {item} na lista",
+            "adiciona {item} na minha lista",
+            "o que tem na minha lista",
+            "lê minha lista",
+            "mostra minha lista",
+            "quais são os itens da lista",
+            "marca {item} como feito",
+            "risca {item} da lista",
+            "remove {item} da lista",
+            "{acao} {item} da lista",
+            "{acao} minha lista"
+          ]
+        },
+        {
+          "name": "FeederIntent",
+          "slots": [
+            {
+              "name": "acao",
+              "type": "FEEDER_ACTION"
+            }
+          ],
+          "samples": [
+            "liga o alimentador",
+            "desliga o alimentador",
+            "aciona o alimentador",
+            "alimenta os gatos",
+            "como está o alimentador",
+            "qual o status do alimentador",
+            "quanto de ração tem",
+            "{acao} o alimentador"
+          ]
+        },
+        {
+          "name": "RadioIntent",
+          "slots": [
+            {
+              "name": "radio",
+              "type": "RADIO_NAME"
+            }
+          ],
+          "samples": [
+            "toca {radio}",
+            "coloca {radio}",
+            "quero ouvir {radio}",
+            "liga {radio}",
+            "toca a rádio {radio}",
+            "coloca a rádio {radio}",
+            "bota {radio}"
+          ]
+        },
+        {
+          "name": "SpotifyIntent",
+          "slots": [
+            {
+              "name": "acao",
+              "type": "SPOTIFY_ACTION"
+            },
+            {
+              "name": "musica",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "toca o spotify",
+            "abre o spotify",
+            "próxima música",
+            "música anterior",
+            "pausa o spotify",
+            "continua o spotify",
+            "toca {musica} no spotify",
+            "coloca {musica} no spotify",
+            "{acao} o spotify"
+          ]
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.PauseIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.ResumeIntent",
+          "samples": []
+        }
+      ],
+      "types": [
+        {
+          "name": "LIST_ACTION",
+          "values": [
+            {
+              "name": {
+                "value": "adicionar",
+                "synonyms": ["adiciona", "coloca", "inclui", "bota"]
+              }
+            },
+            {
+              "name": {
+                "value": "listar",
+                "synonyms": ["lista", "mostra", "lê", "ler", "ver", "fala"]
+              }
+            },
+            {
+              "name": {
+                "value": "concluir",
+                "synonyms": ["marca", "risca", "remove", "feito", "completar", "tirar"]
+              }
+            }
+          ]
+        },
+        {
+          "name": "FEEDER_ACTION",
+          "values": [
+            {
+              "name": {
+                "value": "ligar",
+                "synonyms": ["liga", "aciona", "ativar", "ativa"]
+              }
+            },
+            {
+              "name": {
+                "value": "desligar",
+                "synonyms": ["desliga", "desativar", "parar", "para"]
+              }
+            },
+            {
+              "name": {
+                "value": "status",
+                "synonyms": ["status", "como está", "verificar", "checar", "ver"]
+              }
+            }
+          ]
+        },
+        {
+          "name": "RADIO_NAME",
+          "values": [
+            {
+              "name": {
+                "value": "cbn",
+                "synonyms": ["cbn", "rádio cbn", "a cbn"]
+              }
+            },
+            {
+              "name": {
+                "value": "band news",
+                "synonyms": ["band", "band news", "band news fm", "bandnews"]
+              }
+            },
+            {
+              "name": {
+                "value": "radio globo",
+                "synonyms": ["globo", "rádio globo", "a globo"]
+              }
+            },
+            {
+              "name": {
+                "value": "antena 1",
+                "synonyms": ["antena um", "antena one", "a antena"]
+              }
+            },
+            {
+              "name": {
+                "value": "kiss fm",
+                "synonyms": ["kiss", "kiss fm", "a kiss"]
+              }
+            },
+            {
+              "name": {
+                "value": "nova brasil",
+                "synonyms": ["nova brasil", "nova brasil fm", "novabrasil"]
+              }
+            },
+            {
+              "name": {
+                "value": "alpha fm",
+                "synonyms": ["alpha", "alpha fm", "alfa"]
+              }
+            },
+            {
+              "name": {
+                "value": "mix fm",
+                "synonyms": ["mix", "mix fm", "a mix"]
+              }
+            },
+            {
+              "name": {
+                "value": "transamerica",
+                "synonyms": ["transamérica", "transamerica", "trans américa"]
+              }
+            },
+            {
+              "name": {
+                "value": "radio rock",
+                "synonyms": ["rádio rock", "a rádio rock", "oitenta e nove", "89 fm"]
+              }
+            }
+          ]
+        },
+        {
+          "name": "SPOTIFY_ACTION",
+          "values": [
+            {
+              "name": {
+                "value": "tocar",
+                "synonyms": ["toca", "play", "iniciar", "começa", "abrir"]
+              }
+            },
+            {
+              "name": {
+                "value": "pausar",
+                "synonyms": ["pausa", "pause", "parar", "para"]
+              }
+            },
+            {
+              "name": {
+                "value": "proxima",
+                "synonyms": ["próxima", "próximo", "avançar", "pular", "skip"]
+              }
+            },
+            {
+              "name": {
+                "value": "anterior",
+                "synonyms": ["anterior", "voltar", "a anterior", "de volta"]
+              }
+            },
+            {
+              "name": {
+                "value": "continuar",
+                "synonyms": ["continua", "resume", "retomar", "retoma"]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
