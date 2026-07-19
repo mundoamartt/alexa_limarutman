@@ -20,7 +20,7 @@
     "apis": {
       "custom": {
         "endpoint": {
-          "uri": "https://SEU-PROJETO.vercel.app/api/alexa",
+          "uri": "https://alexa-limarutman.vercel.app/api/alexa",
           "sslCertificateType": "Trusted"
         },
         "interfaces": [
