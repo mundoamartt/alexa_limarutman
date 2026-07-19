@@ -20,8 +20,8 @@
     "apis": {
       "custom": {
         "endpoint": {
-          "uri": "https://alexa-limarutman.vercel.app/api/alexa",
-          "sslCertificateType": "Wildcard"
+          "uri": "https://alexa.amartt.com/api/alexa",
+          "sslCertificateType": "Trusted"
         },
         "interfaces": [
           {
